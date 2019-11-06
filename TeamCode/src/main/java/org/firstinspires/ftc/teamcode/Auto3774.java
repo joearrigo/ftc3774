@@ -13,7 +13,12 @@ public class Auto3774 extends LinearOpMode {
 
         motors = new MotorController(hardwareMap);
 
+        VuforiaHandler vuforia = new VuforiaHandler(telemetry);
+
         waitForStart();
+
+        vuforia.initialize();
+        vuforia.enableTracking();
 
         //This empty loop body forces the program to wait for the second play push to begin
         while(!opModeIsActive());
